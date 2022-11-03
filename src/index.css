@@ -3,3 +3,20 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@300&display=swap');
+
+.contact{
+
+}
+
+@media (min-width: 1024px) {
+    .contact{
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}
+@media (min-width: 1337px) {
+    .contact{
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+}
