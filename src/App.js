@@ -15,6 +15,7 @@ const App = () => {
           <Route path={"/"} element={<Home />} />
           <Route path={"/contact"} element={<ContactMe />} />
         </Routes>
+        <Footer />
     </BrowserRouter>
   )
 }
