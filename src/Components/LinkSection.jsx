@@ -21,6 +21,9 @@ const LinkSection = () => {
         <div className='flex justify-center py-5 mb-5 rounded-[8px] bg-[#EAECF0]'>
             <a className=' font-medium text-[18px]' id='book__design' href="https://books.zuri.team/design-rules">Design Books</a>
         </div>
+        <div className='flex justify-center py-5 mb-5 rounded-[8px] bg-[#EAECF0]'>
+            <a className=' font-medium text-[18px]' id='contact' href="https://books.zuri.team/design-rules">Contact Me</a>
+        </div>
         
     </div>
   )
