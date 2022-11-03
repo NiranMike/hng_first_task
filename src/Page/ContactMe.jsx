@@ -1,6 +1,35 @@
 import React from 'react'
+import { useState } from 'react'
 
 const ContactMe = () => {
+  const [message, setMessage] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const submitHandler = (e) =>{
+    e.preventDefault();
+    setMessage("")
+    setFirstName("")
+    setLastName("")
+    setEmail("")
+  }
+
+  const textField = (e) =>{
+    setMessage(e.target.value);
+  }
+
+  const firstNameInput = (e) =>{
+    setFirstName(e.target.value)
+  }
+
+  const lastNameInput = (e) =>{
+    setLastName(e.target.value)
+  }
+
+  const emailInput = (e) =>{
+    setEmail(e.target.value)
+  }
+
   return (
     <div className='py-[90px] contact mx-4 '>
         <h1 className='font-bold pb-3 text-[36px]'>Contact Me</h1>
@@ -11,23 +40,23 @@ const ContactMe = () => {
         {/* first name input */}
           <div className=' grid gap-2'>
             <label htmlFor="first_name" className=' font-medium text-[14px]'>First name</label>
-            <input className='border focus:outline-none py-2 border-[#D0D5DD] px-3 rounded-[8px]' placeholder='Enter Your first name' id='first_name' type="text" />
+            <input onChange={firstNameInput} value={firstName} className='border focus:outline-none py-2 border-[#D0D5DD] px-3 rounded-[8px]' placeholder='Enter Your first name' id='first_name' type="text" />
           </div>
           {/* last name input */}
           <div className='grid gap-2'>
             <label htmlFor="last_name" className=' font-medium text-[14px]'>Last name</label>
-            <input className='border focus:outline-none py-2 border-[#D0D5DD] px-3 rounded-[8px]' placeholder='Enter Your last name' id='last_name' type="text" />
+            <input onChange={lastNameInput} value={lastName} className='border focus:outline-none py-2 border-[#D0D5DD] px-3 rounded-[8px]' placeholder='Enter Your last name' id='last_name' type="text" />
           </div>
         </div>
           {/* email input */}
           <div className=' grid pb-4'>
             <label htmlFor="email" className=' pb-2 font-medium text-[14px]'>Email</label>
-            <input className='border focus:outline-none py-2 border-[#D0D5DD] px-3 rounded-[8px]' placeholder='yourname@gmail.com' id='email' type="email" />
+            <input onChange={emailInput} value={email} className='border focus:outline-none py-2 border-[#D0D5DD] px-3 rounded-[8px]' placeholder='yourname@gmail.com' id='email' type="email" />
           </div>
           {/* message textarea */}
           <div className=' grid pb-5'>
             <label htmlFor="message" className=' font-medium  pb-2 text-[14px]'>Message</label>
-            <textarea name="" cols="10" rows="5" className='border py-2 focus:outline-none border-[#D0D5DD] px-3 rounded-[8px]' placeholder='Send me a message and i will reply you as soon as possible' id='message' type="email" ></textarea>
+            <textarea onChange={textField} value={message} name="" cols="10" rows="5" className='border py-2 focus:outline-none border-[#D0D5DD] px-3 rounded-[8px]' placeholder='Send me a message and i will reply you as soon as possible' id='message' type="email" ></textarea>
           </div>
 
           {/* privacy permission */}
@@ -38,7 +67,7 @@ const ContactMe = () => {
           </div>
 
           {/* submisson button */}
-          <button id='btn__submit' className='w-full py-[12px] font-semibold text-white text-[16px] rounded-[8px] mt-6 bg-[#1570EF]'>Send a message</button>
+          <button onClick={submitHandler} id='btn__submit' className='w-full py-[12px] font-semibold text-white text-[16px] rounded-[8px] mt-6 bg-[#1570EF]'>Send a message</button>
 
         </form>
     </div>
